@@ -1,10 +1,11 @@
 <script lang="ts">
   import { createLLMOutput, createStreamExample } from '@llm-ui/svelte';
+  import { markdownLookBack } from '@llm-ui/markdown';
   import TextBlock from './TextBlock.svelte';
 
   const exampleText = `# Hello from LLM UI Svelte!
 
-This is a demonstration of the LLM UI library for Svelte.
+This is a demonstration of the LLM UI library for Svelte with **streaming-safe markdown**.
 
 ## Features
 
@@ -12,13 +13,20 @@ This is a demonstration of the LLM UI library for Svelte.
 - ✅ Throttling for consistent output
 - ✅ Custom components support
 - ✅ Framework-agnostic core logic
-- ✅ **Markdown rendering** with proper formatting
+- ✅ **Streaming-safe markdown** - no broken syntax!
 
 The library handles the complexity of rendering LLM output with proper timing and animation.
 
-### Code Example
+### Why Streaming-Safe Markdown?
 
-Here's how easy it is to use:
+When markdown streams character-by-character, you might see:
+- Incomplete **bold text
+- Broken [links](http
+- Partial \`code\`
+
+This library **hides incomplete markdown** until it's complete, preventing flickering and broken rendering.
+
+### Code Example
 
 \`\`\`typescript
 const llmOutput = createLLMOutput({
@@ -26,10 +34,7 @@ const llmOutput = createLLMOutput({
   isStreamFinished: false,
   fallbackBlock: {
     component: TextBlock,
-    lookBack: (params) => ({
-      output: params.output,
-      visibleText: params.output.slice(0, params.visibleTextLengthTarget)
-    })
+    lookBack: markdownLookBack()
   }
 });
 \`\`\`
@@ -46,10 +51,7 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
     isStreamFinished: $stream.isStreamFinished,
     fallbackBlock: {
       component: TextBlock,
-      lookBack: (params) => ({
-        output: params.output,
-        visibleText: params.output.slice(0, params.visibleTextLengthTarget),
-      }),
+      lookBack: markdownLookBack(),
     },
   });
 

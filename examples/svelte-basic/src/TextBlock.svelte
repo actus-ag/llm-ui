@@ -1,11 +1,11 @@
 <script lang="ts">
   import type { BlockMatch } from '@llm-ui/svelte';
+  import { ZERO_WIDTH_SPACE } from '@llm-ui/markdown';
   import { marked } from 'marked';
   
   export let blockMatch: BlockMatch;
   
   // Remove zero-width spaces that the markdown parser uses internally
-  const ZERO_WIDTH_SPACE = '\u200b';
   $: cleanedOutput = blockMatch.output.replaceAll(ZERO_WIDTH_SPACE, '');
   $: html = marked.parse(cleanedOutput, { async: false }) as string;
 </script>
