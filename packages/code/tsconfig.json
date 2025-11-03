@@ -1,0 +1,10 @@
+{
+  "extends": "@llm-ui/tsconfig/base",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

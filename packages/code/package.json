@@ -1,0 +1,46 @@
+{
+  "name": "@llm-ui/code",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "build-watch": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@llm-ui/svelte": "workspace:*",
+    "remeda": "^1.57.0"
+  },
+  "devDependencies": {
+    "@llm-ui/tsconfig": "workspace:*",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  },
+  "peerDependencies": {
+    "shiki": "^1.0.0"
+  }
+}

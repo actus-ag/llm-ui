@@ -12,10 +12,12 @@ const __dirname = dirname(__filename);
 
 const packageSvelte = "packages/svelte";
 const packageMarkdown = "packages/markdown";
+const packageCode = "packages/code";
 
 const typescriptProjects = [
   packageSvelte,
   packageMarkdown,
+  packageCode,
 ];
 
 const foldersToLint = fastGlob.sync([`packages/*`, `tooling/*`], {
