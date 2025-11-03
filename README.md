@@ -1,6 +1,6 @@
 # llm-ui
 
-The React library for LLMs.
+The UI library for LLMs - now available for React and Svelte!
 
 <img src="/media/demo.webp" width="500"  />
 

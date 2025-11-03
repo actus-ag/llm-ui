@@ -1,11 +1,11 @@
-import { LookBackFunction } from "@llm-ui/react";
+import type { LookBackFunction } from "@llm-ui/react";
 import {
   markdownToVisibleText,
   markdownWithVisibleChars,
 } from "./markdownParser";
 
-export const markdownLookBack: () => LookBackFunction =
-  () =>
+export const markdownLookBack =
+  (): LookBackFunction =>
   ({
     output: completeLlmOutput,
     visibleTextLengthTarget,

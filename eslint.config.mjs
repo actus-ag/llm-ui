@@ -17,6 +17,7 @@ const __dirname = dirname(__filename);
 const appWww = "apps/www";
 
 const packageReact = "packages/react";
+const packageSvelte = "packages/svelte";
 const packageMarkdown = "packages/markdown";
 const packageCodeBlocks = "packages/code";
 const packageButtons = "packages/buttons";
@@ -41,6 +42,7 @@ const reactProjects = [
 const reactProjectsGlob = `{${reactProjects.join(",")}}`;
 const typescriptProjects = [
   ...reactProjects,
+  packageSvelte,
   toolingGen,
   packageCli,
   toolingExamples,
