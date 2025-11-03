@@ -142,28 +142,6 @@ importers:
         specifier: ^5.0.0
         version: 5.2.7(@types/node@20.12.7)
 
-  packages/code:
-    dependencies:
-      '@actus-ag/llm-ui-svelte':
-        specifier: workspace:*
-        version: link:../svelte
-      remeda:
-        specifier: ^1.57.0
-        version: 1.57.0
-      shiki:
-        specifier: ^1.0.0
-        version: 1.29.2
-    devDependencies:
-      '@llm-ui/tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.3)
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-
   packages/markdown:
     dependencies:
       '@actus-ag/llm-ui-svelte':

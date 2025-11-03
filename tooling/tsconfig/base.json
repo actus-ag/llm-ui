@@ -16,13 +16,7 @@
     "moduleResolution": "Bundler",
     "jsx": "preserve",
     "baseUrl": "../..",
-    "paths": {
-      "@llm-ui/react/*": ["packages/react/src/*"],
-      "@llm-ui/markdown/*": ["packages/markdown/src/*"],
-      "@llm-ui/code/*": ["packages/code/src/*"],
-      "@llm-ui/json/*": ["packages/json/src/*"],
-      "@llm-ui/shared/*": ["packages/shared/src/*"]
-    }
+    "paths": {}
   },
   "include": ["*.ts"],
   "exclude": ["node_modules"]

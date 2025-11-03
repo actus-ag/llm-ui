@@ -12,7 +12,6 @@ const __dirname = dirname(__filename);
 
 const packageSvelte = "packages/svelte";
 const packageMarkdown = "packages/markdown";
-const packageCode = "packages/code";
 const packageSvelteCode = "packages/svelte-code";
 const packageSvelteJson = "packages/svelte-json";
 const packageSvelteCsv = "packages/svelte-csv";
@@ -20,7 +19,6 @@ const packageSvelteCsv = "packages/svelte-csv";
 const typescriptProjects = [
   packageSvelte,
   packageMarkdown,
-  packageCode,
   packageSvelteCode,
   packageSvelteJson,
   packageSvelteCsv,
