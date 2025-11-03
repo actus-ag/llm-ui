@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { BlockMatch } from '@llm-ui/svelte';
-  import { ZERO_WIDTH_SPACE } from '@llm-ui/markdown';
+  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
+  import { ZERO_WIDTH_SPACE } from '@actus-ag/llm-ui-markdown';
   import { marked } from 'marked';
   
   export let blockMatch: BlockMatch;

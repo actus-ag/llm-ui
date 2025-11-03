@@ -1,4 +1,4 @@
-import type { LookBackFunction } from "@llm-ui/svelte";
+import type { LookBackFunction } from "@actus-ag/llm-ui-svelte";
 import {
   markdownToVisibleText,
   markdownWithVisibleChars,

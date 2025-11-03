@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BlockMatch } from '@llm-ui/svelte';
+  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
   
   export let blockMatch: BlockMatch;
 </script>

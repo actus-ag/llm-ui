@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { createLLMOutput, createStreamExample } from '@llm-ui/svelte';
-  import { findCompleteCsvBlock, findPartialCsvBlock, csvBlockLookBack } from '@llm-ui/svelte-csv';
+  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui-svelte';
+  import { findCompleteCsvBlock, findPartialCsvBlock, csvBlockLookBack } from '@actus-ag/llm-ui-svelte-csv';
   import CsvBlock from './CsvBlock.svelte';
   import TextBlock from './TextBlock.svelte';
 

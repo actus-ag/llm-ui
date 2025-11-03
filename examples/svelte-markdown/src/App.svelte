@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { createLLMOutput, createStreamExample } from '@llm-ui/svelte';
-  import { markdownLookBack } from '@llm-ui/markdown';
+  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui-svelte';
+  import { markdownLookBack } from '@actus-ag/llm-ui-markdown';
   import TextBlock from './TextBlock.svelte';
 
   const exampleText = `# Hello from LLM UI Svelte!

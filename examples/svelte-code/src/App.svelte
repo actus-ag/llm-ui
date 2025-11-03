@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { createLLMOutput, createStreamExample } from '@llm-ui/svelte';
-  import { markdownLookBack } from '@llm-ui/markdown';
-  import { codeBlockLookBack, findCompleteCodeBlock, findPartialCodeBlock, loadHighlighter } from '@llm-ui/svelte-code';
+  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui-svelte';
+  import { markdownLookBack } from '@actus-ag/llm-ui-markdown';
+  import { codeBlockLookBack, findCompleteCodeBlock, findPartialCodeBlock, loadHighlighter } from '@actus-ag/llm-ui-svelte-code';
   import { getHighlighterCore } from 'shiki/core';
   import getWasm from 'shiki/wasm';
   import MarkdownBlock from './MarkdownBlock.svelte';

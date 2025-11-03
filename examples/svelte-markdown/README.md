@@ -1,6 +1,6 @@
-# LLM UI Svelte Basic Example
+# LLM UI Svelte Markdown Example
 
-This example demonstrates the basic usage of `@llm-ui/svelte` library.
+This example demonstrates markdown rendering with the `@actus-ag/llm-ui-svelte` library.
 
 ## Features Demonstrated
 
@@ -17,7 +17,7 @@ This example demonstrates the basic usage of `@llm-ui/svelte` library.
 pnpm install
 
 # Run the example
-cd examples/svelte-basic
+cd examples/svelte-markdown
 pnpm dev
 ```
 

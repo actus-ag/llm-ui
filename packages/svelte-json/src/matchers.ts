@@ -1,4 +1,4 @@
-import type { LLMOutputMatcher } from "@llm-ui/svelte";
+import type { LLMOutputMatcher } from "@actus-ag/llm-ui-svelte";
 import {
   JsonBlockOptions,
   JsonBlockOptionsComplete,

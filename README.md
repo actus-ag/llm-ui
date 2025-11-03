@@ -14,18 +14,18 @@ The Svelte library for LLMs.
 ## Installation
 
 ```bash
-npm install @llm-ui/svelte
+npm install @actus-ag/llm-ui-svelte
 # or
-pnpm add @llm-ui/svelte
+pnpm add @actus-ag/llm-ui-svelte
 # or
-yarn add @llm-ui/svelte
+yarn add @actus-ag/llm-ui-svelte
 ```
 
 ## Quick Start
 
 ```svelte
 <script lang="ts">
-  import { createLLMOutput } from '@llm-ui/svelte';
+  import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
   import TextBlock from './TextBlock.svelte';
 
   const llmOutput = createLLMOutput({
@@ -50,7 +50,7 @@ yarn add @llm-ui/svelte
 
 ## Example
 
-Check out the working example in `examples/svelte-basic/` to see the library in action.
+Check out the working examples in `examples/` to see the library in action.
 
 ## License
 

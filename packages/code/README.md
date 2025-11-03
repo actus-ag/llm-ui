@@ -1,6 +1,6 @@
-# @llm-ui/code
+# @actus-ag/llm-ui-code
 
-Code block support for @llm-ui/svelte with syntax highlighting via Shiki.
+Code block support for @actus-ag/llm-ui-svelte with syntax highlighting via Shiki.
 
 ## Features
 
@@ -13,11 +13,11 @@ Code block support for @llm-ui/svelte with syntax highlighting via Shiki.
 ## Installation
 
 ```bash
-npm install @llm-ui/code shiki
+npm install @actus-ag/llm-ui-code shiki
 # or
-pnpm add @llm-ui/code shiki
+pnpm add @actus-ag/llm-ui-code shiki
 # or
-yarn add @llm-ui/code shiki
+yarn add @actus-ag/llm-ui-code shiki
 ```
 
 ## Usage
@@ -25,9 +25,9 @@ yarn add @llm-ui/code shiki
 ### Basic Setup
 
 ```typescript
-import { createLLMOutput } from '@llm-ui/svelte';
-import { codeBlockLookBack, findCompleteCodeBlock, findPartialCodeBlock } from '@llm-ui/code';
-import { loadHighlighter } from '@llm-ui/code';
+import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
+import { codeBlockLookBack, findCompleteCodeBlock, findPartialCodeBlock } from '@actus-ag/llm-ui-code';
+import { loadHighlighter } from '@actus-ag/llm-ui-code';
 import { getHighlighterCore } from 'shiki/core';
 import { bundledLanguagesInfo } from 'shiki/langs';
 import { bundledThemes } from 'shiki/themes';
@@ -65,8 +65,8 @@ const llmOutput = createLLMOutput({
 
 ```svelte
 <script lang="ts">
-  import type { BlockMatch } from '@llm-ui/svelte';
-  import { codeBlockToHtml } from '@llm-ui/code';
+  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
+  import { codeBlockToHtml } from '@actus-ag/llm-ui-code';
   import { onMount } from 'svelte';
   
   export let blockMatch: BlockMatch;

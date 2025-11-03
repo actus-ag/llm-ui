@@ -1,4 +1,4 @@
-# @llm-ui/svelte
+# @actus-ag/llm-ui-svelte
 
 Display language model outputs in your Svelte project.
 
@@ -9,18 +9,18 @@ Visit http://llm-ui.com/docs to view the documentation.
 ## Installation
 
 ```bash
-npm install @llm-ui/svelte
+npm install @actus-ag/llm-ui-svelte
 # or
-pnpm add @llm-ui/svelte
+pnpm add @actus-ag/llm-ui-svelte
 # or
-yarn add @llm-ui/svelte
+yarn add @actus-ag/llm-ui-svelte
 ```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { createLLMOutput } from '@llm-ui/svelte';
+  import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
   
   const llmOutput = createLLMOutput({
     llmOutput: "Your LLM output here",

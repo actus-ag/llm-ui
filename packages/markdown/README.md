@@ -1,6 +1,6 @@
-# @llm-ui/markdown
+# @actus-ag/llm-ui-markdown
 
-Markdown support for @llm-ui/svelte with streaming-safe rendering.
+Markdown support for @actus-ag/llm-ui-svelte with streaming-safe rendering.
 
 ## Features
 
@@ -12,18 +12,18 @@ Markdown support for @llm-ui/svelte with streaming-safe rendering.
 ## Installation
 
 ```bash
-npm install @llm-ui/markdown
+npm install @actus-ag/llm-ui-markdown
 # or
-pnpm add @llm-ui/markdown
+pnpm add @actus-ag/llm-ui-markdown
 # or
-yarn add @llm-ui/markdown
+yarn add @actus-ag/llm-ui-markdown
 ```
 
 ## Usage
 
 ```typescript
-import { createLLMOutput } from '@llm-ui/svelte';
-import { markdownLookBack } from '@llm-ui/markdown';
+import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
+import { markdownLookBack } from '@actus-ag/llm-ui-markdown';
 
 const llmOutput = createLLMOutput({
   llmOutput: streamedText,
