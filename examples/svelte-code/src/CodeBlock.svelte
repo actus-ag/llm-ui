@@ -2,45 +2,35 @@
   import type { BlockMatch } from '@llm-ui/svelte';
   import type { LLMUIHighlighter } from '@llm-ui/svelte-code';
   import { codeBlockToHtml } from '@llm-ui/svelte-code';
-  import { onMount } from 'svelte';
   
   export let blockMatch: BlockMatch;
   export let highlighter: LLMUIHighlighter;
   
   let html = '';
   let code = '';
-  let loading = true;
+  let updateId = 0;
   
-  onMount(async () => {
-    const result = await codeBlockToHtml({
-      markdownCodeBlock: blockMatch.output,
-      highlighter,
-      codeToHtmlOptions: { theme: 'github-dark' },
-    });
-    html = result.html || '';
-    code = result.code;
-    loading = false;
-  });
-  
-  // Update when blockMatch changes (streaming)
-  $: if (blockMatch) {
+  // Update when blockMatch.output changes (streaming)
+  $: {
+    const currentId = ++updateId;
     codeBlockToHtml({
       markdownCodeBlock: blockMatch.output,
       highlighter,
       codeToHtmlOptions: { theme: 'github-dark' },
     }).then(result => {
-      html = result.html || '';
-      code = result.code;
+      // Only update if this is still the latest request
+      if (currentId === updateId) {
+        html = result.html || '';
+        code = result.code;
+      }
     });
   }
 </script>
 
 {#if html}
   {@html html}
-{:else if loading}
-  <pre class="shiki loading"><code>{code || 'Loading...'}</code></pre>
 {:else}
-  <pre class="shiki"><code>{code}</code></pre>
+  <pre class="shiki loading"><code>{code || 'Loading...'}</code></pre>
 {/if}
 
 <style>

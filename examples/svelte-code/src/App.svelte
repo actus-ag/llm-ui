@@ -3,8 +3,6 @@
   import { markdownLookBack } from '@llm-ui/markdown';
   import { codeBlockLookBack, findCompleteCodeBlock, findPartialCodeBlock, loadHighlighter } from '@llm-ui/svelte-code';
   import { getHighlighterCore } from 'shiki/core';
-  import { bundledLanguagesInfo } from 'shiki/langs';
-  import { bundledThemes } from 'shiki/themes';
   import getWasm from 'shiki/wasm';
   import MarkdownBlock from './MarkdownBlock.svelte';
   import CodeBlock from './CodeBlock.svelte';
@@ -40,11 +38,17 @@ greet('World');
 
 Pretty cool, right? Code blocks are syntax-highlighted as they stream in!`;
 
-  // Load Shiki highlighter
+  // Load Shiki highlighter with specific languages and theme
   const highlighter = loadHighlighter(
     getHighlighterCore({
-      langs: bundledLanguagesInfo,
-      themes: Object.values(bundledThemes),
+      langs: [
+        import('shiki/langs/python.mjs'),
+        import('shiki/langs/typescript.mjs'),
+        import('shiki/langs/javascript.mjs'),
+      ],
+      themes: [
+        import('shiki/themes/github-dark.mjs'),
+      ],
       loadWasm: getWasm,
     })
   );
