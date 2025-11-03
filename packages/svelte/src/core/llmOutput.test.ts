@@ -42,7 +42,8 @@ describe("createLLMOutput", () => {
       },
     });
 
-    let state;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let state: any;
     store.subscribe((s) => (state = s))();
 
     expect(state).toBeDefined();

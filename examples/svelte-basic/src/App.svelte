@@ -1,11 +1,10 @@
 <script lang="ts">
   import { createLLMOutput, createStreamExample } from '@llm-ui/svelte';
-  import { markdownLookBack } from '@llm-ui/markdown';
   import TextBlock from './TextBlock.svelte';
 
   const exampleText = `# Hello from LLM UI Svelte!
 
-This is a demonstration of the LLM UI library ported to Svelte.
+This is a demonstration of the LLM UI library for Svelte.
 
 ## Features
 
@@ -27,7 +26,10 @@ const llmOutput = createLLMOutput({
   isStreamFinished: false,
   fallbackBlock: {
     component: TextBlock,
-    lookBack: markdownLookBack()
+    lookBack: (params) => ({
+      output: params.output,
+      visibleText: params.output.slice(0, params.visibleTextLengthTarget)
+    })
   }
 });
 \`\`\`
@@ -44,7 +46,10 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
     isStreamFinished: $stream.isStreamFinished,
     fallbackBlock: {
       component: TextBlock,
-      lookBack: markdownLookBack(),
+      lookBack: (params) => ({
+        output: params.output,
+        visibleText: params.output.slice(0, params.visibleTextLengthTarget),
+      }),
     },
   });
 

@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@llm-ui/svelte": "workspace:*",
-    "@llm-ui/markdown": "workspace:*",
     "marked": "^11.1.1"
   }
 }

@@ -1,54 +1,22 @@
 import js from "@eslint/js";
 import ts from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
-import eslintPluginAstro from "eslint-plugin-astro";
 import preferArrow from "eslint-plugin-prefer-arrow";
-import reactRecommended from "eslint-plugin-react/configs/recommended.js";
 import fastGlob from "fast-glob";
 import globals from "globals";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
-const astroRecommended = eslintPluginAstro.configs["flat/recommended"];
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const appWww = "apps/www";
-
-const packageReact = "packages/react";
 const packageSvelte = "packages/svelte";
-const packageMarkdown = "packages/markdown";
-const packageCodeBlocks = "packages/code";
-const packageButtons = "packages/buttons";
-const packageShared = "packages/shared";
-const packageJson = "packages/json";
-const packageCsv = "packages/csv";
-const packageCli = "packages/create-llm-ui";
 
-const toolingGen = "tooling/gen";
-const toolingExamples = "tooling/examples";
-
-const reactProjects = [
-  appWww,
-  packageReact,
-  packageMarkdown,
-  packageCodeBlocks,
-  packageButtons,
-  packageShared,
-  packageJson,
-  packageCsv,
-];
-const reactProjectsGlob = `{${reactProjects.join(",")}}`;
 const typescriptProjects = [
-  ...reactProjects,
   packageSvelte,
-  toolingGen,
-  packageCli,
-  toolingExamples,
 ];
 
-const foldersToLint = fastGlob.sync([`apps/*`, `packages/*`, `tooling/*`], {
+const foldersToLint = fastGlob.sync([`packages/*`, `tooling/*`], {
   onlyDirectories: true,
   ignore: ["tooling/tsconfig"],
 });
@@ -64,9 +32,10 @@ if (missingInConfig.length > 0) {
 export default [
   {
     ignores: [
-      `${appWww}/{public,dist,.vercel,.astro}/**/*`,
-      `${appWww}/src/components/Posthog.astro`,
       `packages/*/dist/**/*`,
+      `examples/*/dist/**/*`,
+      `**/*.d.ts`,
+      `**/vite.config.ts`,
     ],
   },
   ...typescriptProjects.map((project) => ({
@@ -88,22 +57,7 @@ export default [
     },
   })),
   {
-    files: [`${reactProjectsGlob}/**/*.{jsx,tsx}`],
-    ...reactRecommended,
-    languageOptions: {
-      ...reactRecommended.languageOptions,
-      globals: {
-        ...globals.browser,
-      },
-    },
-    rules: {
-      ...reactRecommended.rules,
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-    },
-  },
-  {
-    files: [`${reactProjectsGlob}/**/*.{js,jsx,mjs,cjs,ts,tsx}`],
+    files: [`${packageSvelte}/**/*.{js,mjs,cjs,ts,tsx}`],
     ...js.configs.recommended,
     plugins: {
       "prefer-arrow": preferArrow,
@@ -119,13 +73,6 @@ export default [
           classPropertiesAllowed: false,
         },
       ],
-    },
-  },
-  {
-    ...astroRecommended,
-    files: [`${appWww}/**/*.{astro}`],
-    rules: {
-      ...astroRecommended.rules,
     },
   },
 ];

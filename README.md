@@ -1,31 +1,56 @@
 # llm-ui
 
-The UI library for LLMs - now available for React and Svelte!
-
-<img src="/media/demo.webp" width="500"  />
-
-[Documentation](http://llm-ui.com/docs)
+The Svelte library for LLMs.
 
 ## Features
 
-- Removes broken markdown syntax
-- Add your own custom components to LLM output.
-- Throttling smooths out pauses in the LLM’s streamed output
-- Renders output at native frame rate
-- Code blocks for every language with [Shiki](https://shiki.style)
+- Smooth streaming animation with throttling
+- Custom Svelte components for LLM output
+- Renders output at native frame rate (60fps)
+- Framework-agnostic core logic
 - Headless: Bring your own styles
+- Full TypeScript support
 
-## Sponsor
+## Installation
 
-We’re proudly sponsored by **Stream**. If you need scalable, real-time chat, audio, video, feeds or activity streams, check out [Stream](https://getstream.io/?utm_source=github.com&utm_medium=github&utm_campaign=llm-ui).
+```bash
+npm install @llm-ui/svelte
+# or
+pnpm add @llm-ui/svelte
+# or
+yarn add @llm-ui/svelte
+```
 
-<p align="center">
-  <a href="https://getstream.io/?utm_source=github.com&utm_medium=github&utm_campaign=llm-ui" target="_blank">
-    <img src="/media/stream-logo.png" alt="Stream" width="180" />
-  </a>
-</p>
+## Quick Start
 
-> Stream helps developers build scalable in-app Chat, Audio, Video, Feeds, and Moderation experiences powered by a global edge network and enterprise-grade infrastructure.
+```svelte
+<script lang="ts">
+  import { createLLMOutput } from '@llm-ui/svelte';
+  import TextBlock from './TextBlock.svelte';
+
+  const llmOutput = createLLMOutput({
+    llmOutput: "Your LLM output here",
+    isStreamFinished: false,
+    fallbackBlock: {
+      component: TextBlock,
+      lookBack: (params) => ({
+        output: params.output,
+        visibleText: params.output.slice(0, params.visibleTextLengthTarget)
+      })
+    }
+  });
+</script>
+
+<div>
+  {#each $llmOutput.blockMatches as match (match.startIndex)}
+    <svelte:component this={match.block.component} blockMatch={match} />
+  {/each}
+</div>
+```
+
+## Example
+
+Check out the working example in `examples/svelte-basic/` to see the library in action.
 
 ## License
 
