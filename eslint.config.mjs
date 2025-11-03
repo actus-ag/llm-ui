@@ -14,12 +14,14 @@ const packageSvelte = "packages/svelte";
 const packageMarkdown = "packages/markdown";
 const packageCode = "packages/code";
 const packageSvelteCode = "packages/svelte-code";
+const packageSvelteJson = "packages/svelte-json";
 
 const typescriptProjects = [
   packageSvelte,
   packageMarkdown,
   packageCode,
   packageSvelteCode,
+  packageSvelteJson,
 ];
 
 const foldersToLint = fastGlob.sync([`packages/*`, `tooling/*`], {
@@ -43,6 +45,7 @@ export default [
       `**/*.d.ts`,
       `**/vite.config.ts`,
       `**/tsup.config.ts`,
+      `**/vitest.config.ts`,
     ],
   },
   ...typescriptProjects.map((project) => ({
