@@ -1,0 +1,23 @@
+{
+  "name": "svelte-code-example",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "svelte": "^4.2.8",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@llm-ui/svelte": "workspace:*",
+    "@llm-ui/svelte-code": "workspace:*",
+    "@llm-ui/markdown": "workspace:*",
+    "marked": "^11.1.1",
+    "shiki": "^1.0.0"
+  }
+}
