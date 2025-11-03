@@ -37,7 +37,7 @@
     "jsonrepair": "^3.8.0"
   },
   "devDependencies": {
-    "@llm-ui/tsconfig": "workspace:*",
+    "@actus-ag/llm-ui-tsconfig": "workspace:*",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"
   }

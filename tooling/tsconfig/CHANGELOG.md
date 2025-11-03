@@ -1,4 +1,4 @@
-# @llm-ui/tsconfig
+# @actus-ag/llm-ui-tsconfig
 
 ## 0.0.5
 

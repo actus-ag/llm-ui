@@ -41,7 +41,7 @@
     "remeda": "^1.57.0"
   },
   "devDependencies": {
-    "@llm-ui/tsconfig": "workspace:*",
+    "@actus-ag/llm-ui-tsconfig": "workspace:*",
     "@types/mdast": "^4.0.3",
     "tsup": "^8.0.2",
     "typescript": "^5.4.3"

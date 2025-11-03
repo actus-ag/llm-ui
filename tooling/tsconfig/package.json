@@ -1,5 +1,5 @@
 {
-  "name": "@llm-ui/tsconfig",
+  "name": "@actus-ag/llm-ui-tsconfig",
   "version": "0.0.5",
   "private": true,
   "files": [

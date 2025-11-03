@@ -3,30 +3,27 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "llm-ui-kit/llm-ui"
+      "repo": "actus-ag/llm-ui"
     }
   ],
   "commit": false,
   "fixed": [
     [
-      "@llm-ui/react",
-      "@llm-ui/markdown",
-      "@llm-ui/code",
-      "@llm-ui/shared",
-      "@llm-ui/json",
-      "@llm-ui/csv"
+      "@actus-ag/llm-ui-svelte",
+      "@actus-ag/llm-ui-markdown",
+      "@actus-ag/llm-ui-svelte-code",
+      "@actus-ag/llm-ui-svelte-json",
+      "@actus-ag/llm-ui-svelte-csv"
     ]
   ],
   "linked": [],
-  "access": "restricted",
+  "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "bumpVersionsWithWorkspaceProtocolOnly": true,
   "ignore": [
-    "@llm-ui/www",
-    "llm-ui-*-example",
-    "@llm-ui/examples",
-    "@llm-ui/gen"
+    "svelte-*-example",
+    "@actus-ag/llm-ui-tsconfig"
   ],
   "snapshot": {
     "prereleaseTemplate": "{tag}.v{commit}"

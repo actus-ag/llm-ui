@@ -1,5 +1,5 @@
 {
-  "extends": "@llm-ui/tsconfig/base",
+  "extends": "@actus-ag/llm-ui-tsconfig/base",
   "compilerOptions": {
     "outDir": "./dist",
     "declaration": true,

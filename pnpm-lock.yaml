@@ -166,7 +166,7 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0
     devDependencies:
-      '@llm-ui/tsconfig':
+      '@actus-ag/llm-ui-tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
       '@types/mdast':
@@ -185,7 +185,7 @@ importers:
         specifier: ^1.57.0
         version: 1.57.0
     devDependencies:
-      '@llm-ui/tsconfig':
+      '@actus-ag/llm-ui-tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
       '@sveltejs/vite-plugin-svelte':
@@ -219,7 +219,7 @@ importers:
         specifier: ^1.0.0
         version: 1.29.2
     devDependencies:
-      '@llm-ui/tsconfig':
+      '@actus-ag/llm-ui-tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
       tsup:
@@ -235,7 +235,7 @@ importers:
         specifier: workspace:*
         version: link:../svelte
     devDependencies:
-      '@llm-ui/tsconfig':
+      '@actus-ag/llm-ui-tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
       tsup:
@@ -257,7 +257,7 @@ importers:
         specifier: ^3.8.0
         version: 3.13.1
     devDependencies:
-      '@llm-ui/tsconfig':
+      '@actus-ag/llm-ui-tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
       tsup:
