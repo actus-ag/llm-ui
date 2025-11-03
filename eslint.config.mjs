@@ -15,6 +15,7 @@ const packageMarkdown = "packages/markdown";
 const packageCode = "packages/code";
 const packageSvelteCode = "packages/svelte-code";
 const packageSvelteJson = "packages/svelte-json";
+const packageSvelteCsv = "packages/svelte-csv";
 
 const typescriptProjects = [
   packageSvelte,
@@ -22,6 +23,7 @@ const typescriptProjects = [
   packageCode,
   packageSvelteCode,
   packageSvelteJson,
+  packageSvelteCsv,
 ];
 
 const foldersToLint = fastGlob.sync([`packages/*`, `tooling/*`], {

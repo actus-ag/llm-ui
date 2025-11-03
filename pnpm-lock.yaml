@@ -104,6 +104,25 @@ importers:
         specifier: ^5.0.0
         version: 5.2.7(@types/node@20.12.7)
 
+  examples/svelte-csv:
+    dependencies:
+      '@llm-ui/svelte':
+        specifier: workspace:*
+        version: link:../../packages/svelte
+      '@llm-ui/svelte-csv':
+        specifier: workspace:*
+        version: link:../../packages/svelte-csv
+    devDependencies:
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^3.0.0
+        version: 3.1.2(svelte@4.2.17)(vite@5.2.7)
+      svelte:
+        specifier: ^4.2.8
+        version: 4.2.17
+      vite:
+        specifier: ^5.0.0
+        version: 5.2.7(@types/node@20.12.7)
+
   examples/svelte-json:
     dependencies:
       '@llm-ui/svelte':
@@ -221,6 +240,22 @@ importers:
       shiki:
         specifier: ^1.0.0
         version: 1.29.2
+    devDependencies:
+      '@llm-ui/tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(typescript@5.4.3)
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.3
+
+  packages/svelte-csv:
+    dependencies:
+      '@llm-ui/svelte':
+        specifier: workspace:*
+        version: link:../svelte
     devDependencies:
       '@llm-ui/tsconfig':
         specifier: workspace:*
