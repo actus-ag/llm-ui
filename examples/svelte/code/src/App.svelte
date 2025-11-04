@@ -59,8 +59,8 @@ Pretty cool, right? Code blocks are syntax-highlighted as they stream in!`;
   });
 
   const llmOutput = createLLMOutput({
-    llmOutput: $stream.output,
-    isStreamFinished: $stream.isStreamFinished,
+    llmOutput: stream.output,
+    isStreamFinished: stream.isStreamFinished,
     blocks: [
       {
         component: CodeBlock,
@@ -75,9 +75,11 @@ Pretty cool, right? Code blocks are syntax-highlighted as they stream in!`;
     },
   });
 
-  $: llmOutput.update({
-    llmOutput: $stream.output,
-    isStreamFinished: $stream.isStreamFinished,
+  $effect(() => {
+    llmOutput.update({
+      llmOutput: stream.output,
+      isStreamFinished: stream.isStreamFinished,
+    });
   });
 
   function handleReset() {
@@ -99,27 +101,28 @@ Pretty cool, right? Code blocks are syntax-highlighted as they stream in!`;
     <h1>LLM UI Svelte - Code Example</h1>
     
     <div class="controls">
-      <button on:click={handleStart} disabled={$stream.isPlaying || $stream.isStreamFinished}>
+      <button onclick={handleStart} disabled={stream.isPlaying || stream.isStreamFinished}>
         Start
       </button>
-      <button on:click={handlePause} disabled={!$stream.isPlaying}>
+      <button onclick={handlePause} disabled={!stream.isPlaying}>
         Pause
       </button>
-      <button on:click={handleReset}>
+      <button onclick={handleReset}>
         Reset
       </button>
     </div>
 
     <div class="output">
-      {#each $llmOutput.blockMatches as match (match.startIndex)}
-        <svelte:component this={match.block.component} blockMatch={match} {highlighter} />
+      {#each llmOutput.blockMatches as match (match.startIndex)}
+        {@const Component = match.block.component}
+        <Component blockMatch={match} {highlighter} />
       {/each}
     </div>
 
     <div class="stats">
-      <p>Stream Started: {$stream.isStreamStarted ? 'Yes' : 'No'}</p>
-      <p>Stream Finished: {$stream.isStreamFinished ? 'Yes' : 'No'}</p>
-      <p>Playing: {$stream.isPlaying ? 'Yes' : 'No'}</p>
+      <p>Stream Started: {stream.isStreamStarted ? 'Yes' : 'No'}</p>
+      <p>Stream Finished: {stream.isStreamFinished ? 'Yes' : 'No'}</p>
+      <p>Playing: {stream.isPlaying ? 'Yes' : 'No'}</p>
     </div>
   </div>
 </main>

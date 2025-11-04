@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { BlockMatch } from '@actus-ag/llm-ui';
   
-  export let blockMatch: BlockMatch;
+  let { blockMatch }: { blockMatch: BlockMatch } = $props();
   
-  $: jsonData = JSON.parse(blockMatch.output);
+  let jsonData = $derived(JSON.parse(blockMatch.output));
 </script>
 
 <div class="json-block">

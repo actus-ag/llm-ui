@@ -2,11 +2,11 @@
   import type { BlockMatch } from '@actus-ag/llm-ui';
   import { parseCsv } from '@actus-ag/llm-ui-csv';
   
-  export let blockMatch: BlockMatch;
+  let { blockMatch }: { blockMatch: BlockMatch } = $props();
   
-  $: items = parseCsv(blockMatch.output, { type: 'data' });
-  $: type = items[0] || '';
-  $: values = items.slice(1);
+  let items = $derived(parseCsv(blockMatch.output, { type: 'data' }));
+  let type = $derived(items[0] || '');
+  let values = $derived(items.slice(1));
 </script>
 
 <div class="csv-block">

@@ -3,15 +3,14 @@
   import type { LLMUIHighlighter } from '@actus-ag/llm-ui-code';
   import { codeBlockToHtml } from '@actus-ag/llm-ui-code';
   
-  export let blockMatch: BlockMatch;
-  export let highlighter: LLMUIHighlighter;
+  let { blockMatch, highlighter }: { blockMatch: BlockMatch; highlighter: LLMUIHighlighter } = $props();
   
-  let html = '';
-  let code = '';
-  let updateId = 0;
+  let html = $state('');
+  let code = $state('');
+  let updateId = $state(0);
   
   // Update when blockMatch.output changes (streaming)
-  $: {
+  $effect(() => {
     const currentId = ++updateId;
     codeBlockToHtml({
       markdownCodeBlock: blockMatch.output,
@@ -24,7 +23,7 @@
         code = result.code;
       }
     });
-  }
+  });
 </script>
 
 {#if html}

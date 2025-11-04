@@ -3,11 +3,11 @@
   import { ZERO_WIDTH_SPACE } from '@actus-ag/llm-ui-markdown';
   import { marked } from 'marked';
   
-  export let blockMatch: BlockMatch;
+  let { blockMatch }: { blockMatch: BlockMatch } = $props();
   
   // Remove zero-width spaces that the markdown parser uses internally
-  $: cleanedOutput = blockMatch.output.replaceAll(ZERO_WIDTH_SPACE, '');
-  $: html = marked.parse(cleanedOutput, { async: false }) as string;
+  let cleanedOutput = $derived(blockMatch.output.replaceAll(ZERO_WIDTH_SPACE, ''));
+  let html = $derived(marked.parse(cleanedOutput, { async: false }) as string);
 </script>
 
 <div class="markdown">
