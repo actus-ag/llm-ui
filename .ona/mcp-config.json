@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "svelte": {
+      "name": "svelte-docs",
+      "command": "pnpm",
+      "args": ["dlx", "@sveltejs/mcp"],
+      "disabled": false,
+      "timeout": 30
+    }
+  }
+}
