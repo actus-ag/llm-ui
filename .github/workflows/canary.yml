@@ -66,10 +66,10 @@ jobs:
           body: |
             Your pull request has been published to npm.
 
-            You can install @actus-ag/llm-ui-svelte by running:
+            You can install @actus-ag/llm-ui by running:
 
             ```
-            npm install @actus-ag/llm-ui-svelte@${{ steps.version.outputs.TAG }}
+            npm install @actus-ag/llm-ui@${{ steps.version.outputs.TAG }}
             ```
 
             [Pull request has been updated, please wait for latest changes to be pushed to npm...]
@@ -95,11 +95,11 @@ jobs:
         run: |
           cat << EOF > .changeset/force-canary-build.md
           ---
-          '@actus-ag/llm-ui-svelte': patch
+          '@actus-ag/llm-ui': patch
           '@actus-ag/llm-ui-markdown': patch
-          '@actus-ag/llm-ui-svelte-code': patch
-          '@actus-ag/llm-ui-svelte-json': patch
-          '@actus-ag/llm-ui-svelte-csv': patch
+          '@actus-ag/llm-ui-code': patch
+          '@actus-ag/llm-ui-json': patch
+          '@actus-ag/llm-ui-csv': patch
           ---
           Force canary build
 
@@ -129,10 +129,10 @@ jobs:
           body: |
             Your pull request has been published to npm.
 
-            You can install @actus-ag/llm-ui-svelte by running:
+            You can install @actus-ag/llm-ui by running:
 
             ```
-            npm install @actus-ag/llm-ui-svelte@${{ steps.version.outputs.TAG }}
+            npm install @actus-ag/llm-ui@${{ steps.version.outputs.TAG }}
             ```
 
             [Pull request has been updated, please wait for latest changes to be pushed to npm...]

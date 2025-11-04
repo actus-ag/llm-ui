@@ -1,6 +1,11 @@
-# llm-ui
+# llm-ui (Svelte)
 
-The Svelte library for LLMs.
+A Svelte port of [llm-ui](https://github.com/llm-ui-kit/llm-ui) - the library for displaying LLM outputs.
+
+This is a fork maintained by actus ag, focused on Svelte instead of React.
+
+**Original project:** https://github.com/llm-ui-kit/llm-ui (React-based)  
+**This fork:** Svelte-based implementation
 
 ## Features
 
@@ -14,18 +19,18 @@ The Svelte library for LLMs.
 ## Installation
 
 ```bash
-npm install @actus-ag/llm-ui-svelte
+npm install @actus-ag/llm-ui
 # or
-pnpm add @actus-ag/llm-ui-svelte
+pnpm add @actus-ag/llm-ui
 # or
-yarn add @actus-ag/llm-ui-svelte
+yarn add @actus-ag/llm-ui
 ```
 
 ## Quick Start
 
 ```svelte
 <script lang="ts">
-  import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
+  import { createLLMOutput } from '@actus-ag/llm-ui';
   import TextBlock from './TextBlock.svelte';
 
   const llmOutput = createLLMOutput({

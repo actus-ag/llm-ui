@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
+  import type { BlockMatch } from '@actus-ag/llm-ui';
   import { ZERO_WIDTH_SPACE } from '@actus-ag/llm-ui-markdown';
   import { marked } from 'marked';
   

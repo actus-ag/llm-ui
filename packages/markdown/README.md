@@ -1,6 +1,6 @@
 # @actus-ag/llm-ui-markdown
 
-Markdown support for @actus-ag/llm-ui-svelte with streaming-safe rendering.
+Markdown support for @actus-ag/llm-ui with streaming-safe rendering.
 
 ## Features
 
@@ -22,7 +22,7 @@ yarn add @actus-ag/llm-ui-markdown
 ## Usage
 
 ```typescript
-import { createLLMOutput } from '@actus-ag/llm-ui-svelte';
+import { createLLMOutput } from '@actus-ag/llm-ui';
 import { markdownLookBack } from '@actus-ag/llm-ui-markdown';
 
 const llmOutput = createLLMOutput({

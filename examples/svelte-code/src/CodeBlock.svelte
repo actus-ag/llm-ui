@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
-  import type { LLMUIHighlighter } from '@actus-ag/llm-ui-svelte-code';
-  import { codeBlockToHtml } from '@actus-ag/llm-ui-svelte-code';
+  import type { BlockMatch } from '@actus-ag/llm-ui';
+  import type { LLMUIHighlighter } from '@actus-ag/llm-ui-code';
+  import { codeBlockToHtml } from '@actus-ag/llm-ui-code';
   
   export let blockMatch: BlockMatch;
   export let highlighter: LLMUIHighlighter;

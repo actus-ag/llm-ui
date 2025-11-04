@@ -1,4 +1,4 @@
-import type { LookBackFunction } from "@actus-ag/llm-ui-svelte";
+import type { LookBackFunction } from "@actus-ag/llm-ui";
 import type { CodeBlockOptions } from "./options.js";
 import { getOptions } from "./options.js";
 import {

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui-svelte';
-  import { findCompleteJsonBlock, findPartialJsonBlock, jsonBlockLookBack } from '@actus-ag/llm-ui-svelte-json';
+  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui';
+  import { findCompleteJsonBlock, findPartialJsonBlock, jsonBlockLookBack } from '@actus-ag/llm-ui-json';
   import JsonBlock from './JsonBlock.svelte';
   import TextBlock from './TextBlock.svelte';
 

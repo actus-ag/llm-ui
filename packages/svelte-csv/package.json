@@ -1,5 +1,5 @@
 {
-  "name": "@actus-ag/llm-ui-svelte-csv",
+  "name": "@actus-ag/llm-ui-csv",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@actus-ag/llm-ui-svelte": "workspace:*"
+    "@actus-ag/llm-ui": "workspace:*"
   },
   "devDependencies": {
     "@actus-ag/llm-ui-tsconfig": "workspace:*",

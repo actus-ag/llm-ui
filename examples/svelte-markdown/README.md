@@ -1,6 +1,6 @@
 # LLM UI Svelte Markdown Example
 
-This example demonstrates markdown rendering with the `@actus-ag/llm-ui-svelte` library.
+This example demonstrates markdown rendering with the `@actus-ag/llm-ui` library.
 
 ## Features Demonstrated
 

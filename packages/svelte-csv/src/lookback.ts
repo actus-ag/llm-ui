@@ -1,4 +1,4 @@
-import type { LookBackFunction } from "@actus-ag/llm-ui-svelte";
+import type { LookBackFunction } from "@actus-ag/llm-ui";
 import { CsvBlockOptions, getOptions } from "./options";
 import { parseCsv } from "./parseCsv";
 import { removeStartEndChars } from "./shared";

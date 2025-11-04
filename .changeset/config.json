@@ -9,11 +9,11 @@
   "commit": false,
   "fixed": [
     [
-      "@actus-ag/llm-ui-svelte",
+      "@actus-ag/llm-ui",
       "@actus-ag/llm-ui-markdown",
-      "@actus-ag/llm-ui-svelte-code",
-      "@actus-ag/llm-ui-svelte-json",
-      "@actus-ag/llm-ui-svelte-csv"
+      "@actus-ag/llm-ui-code",
+      "@actus-ag/llm-ui-json",
+      "@actus-ag/llm-ui-csv"
     ]
   ],
   "linked": [],

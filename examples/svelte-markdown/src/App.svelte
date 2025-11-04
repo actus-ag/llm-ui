@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui-svelte';
+  import { createLLMOutput, createStreamExample } from '@actus-ag/llm-ui';
   import { markdownLookBack } from '@actus-ag/llm-ui-markdown';
   import TextBlock from './TextBlock.svelte';
 

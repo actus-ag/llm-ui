@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { BlockMatch } from '@actus-ag/llm-ui-svelte';
-  import { parseCsv } from '@actus-ag/llm-ui-svelte-csv';
+  import type { BlockMatch } from '@actus-ag/llm-ui';
+  import { parseCsv } from '@actus-ag/llm-ui-csv';
   
   export let blockMatch: BlockMatch;
   

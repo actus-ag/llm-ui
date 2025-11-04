@@ -1,4 +1,4 @@
-import type { MaybeLLMOutputMatch } from "@actus-ag/llm-ui-svelte";
+import type { MaybeLLMOutputMatch } from "@actus-ag/llm-ui";
 
 const regexMatchToLLmOutputMatch = (
   regexMatch: RegExpMatchArray | null,

@@ -1,4 +1,4 @@
-import type { MaybeLLMOutputMatch } from "@actus-ag/llm-ui-svelte";
+import type { MaybeLLMOutputMatch } from "@actus-ag/llm-ui";
 import { describe, expect, it } from "vitest";
 import { findCompleteCsvBlock, findPartialCsvBlock } from "./matchers";
 import { CsvBlockOptions } from "./options";

@@ -1,4 +1,4 @@
-import type { LookBackFunction } from "@actus-ag/llm-ui-svelte";
+import type { LookBackFunction } from "@actus-ag/llm-ui";
 import { setJsonPath } from "./jsonPathSet";
 import { isAllowed, isIgnored, traverseLeafNodes } from "./jsonPathTraverse";
 import { JsonBlockOptions, getOptions } from "./options";

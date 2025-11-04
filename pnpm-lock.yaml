@@ -56,15 +56,15 @@ importers:
 
   examples/svelte-code:
     dependencies:
+      '@actus-ag/llm-ui':
+        specifier: workspace:*
+        version: link:../../packages/svelte
+      '@actus-ag/llm-ui-code':
+        specifier: workspace:*
+        version: link:../../packages/svelte-code
       '@actus-ag/llm-ui-markdown':
         specifier: workspace:*
         version: link:../../packages/markdown
-      '@actus-ag/llm-ui-svelte':
-        specifier: workspace:*
-        version: link:../../packages/svelte
-      '@actus-ag/llm-ui-svelte-code':
-        specifier: workspace:*
-        version: link:../../packages/svelte-code
       marked:
         specifier: ^11.1.1
         version: 11.2.0
@@ -84,10 +84,10 @@ importers:
 
   examples/svelte-csv:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../../packages/svelte
-      '@actus-ag/llm-ui-svelte-csv':
+      '@actus-ag/llm-ui-csv':
         specifier: workspace:*
         version: link:../../packages/svelte-csv
     devDependencies:
@@ -103,10 +103,10 @@ importers:
 
   examples/svelte-json:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../../packages/svelte
-      '@actus-ag/llm-ui-svelte-json':
+      '@actus-ag/llm-ui-json':
         specifier: workspace:*
         version: link:../../packages/svelte-json
     devDependencies:
@@ -122,12 +122,12 @@ importers:
 
   examples/svelte-markdown:
     dependencies:
+      '@actus-ag/llm-ui':
+        specifier: workspace:*
+        version: link:../../packages/svelte
       '@actus-ag/llm-ui-markdown':
         specifier: workspace:*
         version: link:../../packages/markdown
-      '@actus-ag/llm-ui-svelte':
-        specifier: workspace:*
-        version: link:../../packages/svelte
       marked:
         specifier: ^11.1.1
         version: 11.2.0
@@ -144,7 +144,7 @@ importers:
 
   packages/markdown:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../svelte
       mdast-util-from-markdown:
@@ -212,7 +212,7 @@ importers:
 
   packages/svelte-code:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../svelte
       shiki:
@@ -231,7 +231,7 @@ importers:
 
   packages/svelte-csv:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../svelte
     devDependencies:
@@ -247,7 +247,7 @@ importers:
 
   packages/svelte-json:
     dependencies:
-      '@actus-ag/llm-ui-svelte':
+      '@actus-ag/llm-ui':
         specifier: workspace:*
         version: link:../svelte
       jsonpath-plus:
