@@ -61,7 +61,7 @@ web_modules/
 .nx
 
 packages/*/dist
-examples/*/dist
+examples/*/*/dist
 
 .husky/post*
 
