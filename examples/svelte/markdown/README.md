@@ -17,7 +17,7 @@ This example demonstrates markdown rendering with the `@actus-ag/llm-ui` library
 pnpm install
 
 # Run the example
-cd examples/svelte-markdown
+cd examples/svelte/markdown
 pnpm dev
 ```
 
