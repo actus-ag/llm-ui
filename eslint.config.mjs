@@ -10,14 +10,14 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const packageSvelte = "packages/svelte";
+const packageCore = "packages/core";
 const packageMarkdown = "packages/markdown";
 const packageCode = "packages/code";
 const packageJson = "packages/json";
 const packageCsv = "packages/csv";
 
 const typescriptProjects = [
-  packageSvelte,
+  packageCore,
   packageMarkdown,
   packageCode,
   packageJson,
@@ -67,7 +67,7 @@ export default [
     },
   })),
   {
-    files: [`${packageSvelte}/**/*.{js,mjs,cjs,ts,tsx}`],
+    files: [`${packageCore}/**/*.{js,mjs,cjs,ts,tsx}`],
     ...js.configs.recommended,
     plugins: {
       "prefer-arrow": preferArrow,
