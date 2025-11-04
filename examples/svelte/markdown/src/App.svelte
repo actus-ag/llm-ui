@@ -47,8 +47,8 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
   });
 
   const llmOutput = createLLMOutput({
-    llmOutput: stream.output,
-    isStreamFinished: stream.isStreamFinished,
+    llmOutput: $stream.output,
+    isStreamFinished: $stream.isStreamFinished,
     fallbackBlock: {
       component: TextBlock,
       lookBack: markdownLookBack(),
@@ -57,8 +57,8 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
 
   $effect(() => {
     llmOutput.update({
-      llmOutput: stream.output,
-      isStreamFinished: stream.isStreamFinished,
+      llmOutput: $stream.output,
+      isStreamFinished: $stream.isStreamFinished,
     });
   });
 
@@ -81,10 +81,10 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
     <h1>LLM UI Svelte Example</h1>
     
     <div class="controls">
-      <button onclick={handleStart} disabled={stream.isPlaying || stream.isStreamFinished}>
+      <button onclick={handleStart} disabled={$stream.isPlaying || $stream.isStreamFinished}>
         Start
       </button>
-      <button onclick={handlePause} disabled={!stream.isPlaying}>
+      <button onclick={handlePause} disabled={!$stream.isPlaying}>
         Pause
       </button>
       <button onclick={handleReset}>
@@ -93,17 +93,17 @@ Pretty cool, right? The markdown is rendered smoothly as it streams in!`;
     </div>
 
     <div class="output">
-      {#each llmOutput.blockMatches as match (match.startIndex)}
+      {#each $llmOutput.blockMatches as match (match.startIndex)}
         {@const Component = match.block.component}
         <Component blockMatch={match} />
       {/each}
     </div>
 
     <div class="stats">
-      <p>Stream Started: {stream.isStreamStarted ? 'Yes' : 'No'}</p>
-      <p>Stream Finished: {stream.isStreamFinished ? 'Yes' : 'No'}</p>
-      <p>Playing: {stream.isPlaying ? 'Yes' : 'No'}</p>
-      <p>Visible Text Length: {llmOutput.visibleText.length}</p>
+      <p>Stream Started: {$stream.isStreamStarted ? 'Yes' : 'No'}</p>
+      <p>Stream Finished: {$stream.isStreamFinished ? 'Yes' : 'No'}</p>
+      <p>Playing: {$stream.isPlaying ? 'Yes' : 'No'}</p>
+      <p>Visible Text Length: {$llmOutput.visibleText.length}</p>
     </div>
   </div>
 </main>

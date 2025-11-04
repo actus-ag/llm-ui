@@ -20,8 +20,8 @@ JSON blocks stream in character by character with smooth animation!`;
   });
 
   const llmOutput = createLLMOutput({
-    llmOutput: stream.output,
-    isStreamFinished: stream.isStreamFinished,
+    llmOutput: $stream.output,
+    isStreamFinished: $stream.isStreamFinished,
     blocks: [
       {
         component: JsonBlock,
@@ -47,8 +47,8 @@ JSON blocks stream in character by character with smooth animation!`;
 
   $effect(() => {
     llmOutput.update({
-      llmOutput: stream.output,
-      isStreamFinished: stream.isStreamFinished,
+      llmOutput: $stream.output,
+      isStreamFinished: $stream.isStreamFinished,
     });
   });
 
@@ -71,10 +71,10 @@ JSON blocks stream in character by character with smooth animation!`;
     <h1>LLM UI Svelte - JSON Example</h1>
     
     <div class="controls">
-      <button onclick={handleStart} disabled={stream.isPlaying || stream.isStreamFinished}>
+      <button onclick={handleStart} disabled={$stream.isPlaying || $stream.isStreamFinished}>
         Start
       </button>
-      <button onclick={handlePause} disabled={!stream.isPlaying}>
+      <button onclick={handlePause} disabled={!$stream.isPlaying}>
         Pause
       </button>
       <button onclick={handleReset}>
@@ -83,16 +83,16 @@ JSON blocks stream in character by character with smooth animation!`;
     </div>
 
     <div class="output">
-      {#each llmOutput.blockMatches as match (match.startIndex)}
+      {#each $llmOutput.blockMatches as match (match.startIndex)}
         {@const Component = match.block.component}
         <Component blockMatch={match} />
       {/each}
     </div>
 
     <div class="stats">
-      <p>Stream Started: {stream.isStreamStarted ? 'Yes' : 'No'}</p>
-      <p>Stream Finished: {stream.isStreamFinished ? 'Yes' : 'No'}</p>
-      <p>Playing: {stream.isPlaying ? 'Yes' : 'No'}</p>
+      <p>Stream Started: {$stream.isStreamStarted ? 'Yes' : 'No'}</p>
+      <p>Stream Finished: {$stream.isStreamFinished ? 'Yes' : 'No'}</p>
+      <p>Playing: {$stream.isPlaying ? 'Yes' : 'No'}</p>
     </div>
   </div>
 </main>
