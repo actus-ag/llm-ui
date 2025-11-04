@@ -61,7 +61,7 @@ importers:
         version: link:../../packages/svelte
       '@actus-ag/llm-ui-code':
         specifier: workspace:*
-        version: link:../../packages/svelte-code
+        version: link:../../packages/code
       '@actus-ag/llm-ui-markdown':
         specifier: workspace:*
         version: link:../../packages/markdown
@@ -89,7 +89,7 @@ importers:
         version: link:../../packages/svelte
       '@actus-ag/llm-ui-csv':
         specifier: workspace:*
-        version: link:../../packages/svelte-csv
+        version: link:../../packages/csv
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.0
@@ -108,7 +108,7 @@ importers:
         version: link:../../packages/svelte
       '@actus-ag/llm-ui-json':
         specifier: workspace:*
-        version: link:../../packages/svelte-json
+        version: link:../../packages/json
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.0
@@ -141,6 +141,63 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.2.7(@types/node@20.12.7)
+
+  packages/code:
+    dependencies:
+      '@actus-ag/llm-ui':
+        specifier: workspace:*
+        version: link:../svelte
+      shiki:
+        specifier: ^1.0.0
+        version: 1.29.2
+    devDependencies:
+      '@actus-ag/llm-ui-tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(typescript@5.4.3)
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.3
+
+  packages/csv:
+    dependencies:
+      '@actus-ag/llm-ui':
+        specifier: workspace:*
+        version: link:../svelte
+    devDependencies:
+      '@actus-ag/llm-ui-tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(typescript@5.4.3)
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.3
+
+  packages/json:
+    dependencies:
+      '@actus-ag/llm-ui':
+        specifier: workspace:*
+        version: link:../svelte
+      jsonpath-plus:
+        specifier: ^9.0.0
+        version: 9.0.0
+      jsonrepair:
+        specifier: ^3.8.0
+        version: 3.13.1
+    devDependencies:
+      '@actus-ag/llm-ui-tsconfig':
+        specifier: workspace:*
+        version: link:../../tooling/tsconfig
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(typescript@5.4.3)
+      typescript:
+        specifier: ^5.4.3
+        version: 5.4.3
 
   packages/markdown:
     dependencies:
@@ -209,63 +266,6 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.2.7(@types/node@20.12.7)
-
-  packages/svelte-code:
-    dependencies:
-      '@actus-ag/llm-ui':
-        specifier: workspace:*
-        version: link:../svelte
-      shiki:
-        specifier: ^1.0.0
-        version: 1.29.2
-    devDependencies:
-      '@actus-ag/llm-ui-tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.3)
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-
-  packages/svelte-csv:
-    dependencies:
-      '@actus-ag/llm-ui':
-        specifier: workspace:*
-        version: link:../svelte
-    devDependencies:
-      '@actus-ag/llm-ui-tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.3)
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
-
-  packages/svelte-json:
-    dependencies:
-      '@actus-ag/llm-ui':
-        specifier: workspace:*
-        version: link:../svelte
-      jsonpath-plus:
-        specifier: ^9.0.0
-        version: 9.0.0
-      jsonrepair:
-        specifier: ^3.8.0
-        version: 3.13.1
-    devDependencies:
-      '@actus-ag/llm-ui-tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(typescript@5.4.3)
-      typescript:
-        specifier: ^5.4.3
-        version: 5.4.3
 
   tooling/tsconfig: {}
 

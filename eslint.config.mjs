@@ -12,16 +12,16 @@ const __dirname = dirname(__filename);
 
 const packageSvelte = "packages/svelte";
 const packageMarkdown = "packages/markdown";
-const packageSvelteCode = "packages/svelte-code";
-const packageSvelteJson = "packages/svelte-json";
-const packageSvelteCsv = "packages/svelte-csv";
+const packageCode = "packages/code";
+const packageJson = "packages/json";
+const packageCsv = "packages/csv";
 
 const typescriptProjects = [
   packageSvelte,
   packageMarkdown,
-  packageSvelteCode,
-  packageSvelteJson,
-  packageSvelteCsv,
+  packageCode,
+  packageJson,
+  packageCsv,
 ];
 
 const foldersToLint = fastGlob.sync([`packages/*`, `tooling/*`], {
